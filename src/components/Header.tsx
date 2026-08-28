@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import SunflowerMark from "@/components/SunflowerMark";
 
 const NAV = [
   { href: "/", label: "トップ" },
@@ -11,19 +12,22 @@ const NAV = [
 
 export default function Header() {
   return (
-    <header className="border-b border-neutral-200 bg-white">
+    <header className="border-b border-amber-100 bg-[#fffaf2]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fffaf2]/80 sticky top-0 z-10">
       <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <Link href="/" className="flex flex-col">
-          <span className="text-lg font-bold text-neutral-900">
-            {SITE.shortName}
+        <Link href="/" className="flex items-center gap-3">
+          <SunflowerMark className="w-9 h-9 shrink-0" />
+          <span className="flex flex-col">
+            <span className="text-lg font-bold text-stone-900">
+              {SITE.shortName}
+            </span>
+            <span className="text-xs text-stone-500">{SITE.operatorName}</span>
           </span>
-          <span className="text-xs text-neutral-500">{SITE.operatorName}</span>
         </Link>
         <nav aria-label="サイト内メインナビゲーション">
-          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-700">
+          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium text-stone-700">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-emerald-700">
+                <Link href={item.href} className="hover:text-amber-700">
                   {item.label}
                 </Link>
               </li>

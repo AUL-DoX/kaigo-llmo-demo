@@ -54,24 +54,26 @@ export default function ServicesPage() {
     <>
       <JsonLd data={faqJsonLd} />
 
-      <section className="max-w-5xl mx-auto px-4 pt-12 pb-6">
-        <h1 className="text-3xl font-bold text-neutral-900">サービス紹介</h1>
-        <p className="mt-3 text-neutral-700 max-w-2xl leading-relaxed">
-          {SITE.shortName}では、在宅・入居どちらの形でも住み慣れた環境での生活を続けられるよう、
-          以下の3つのサービスを組み合わせて提供しています。対象地域は札幌市中央区、定員は{SITE.capacity}床です。
-        </p>
+      <section className="bg-gradient-to-b from-amber-50 to-[#fffaf2]">
+        <div className="max-w-5xl mx-auto px-4 pt-14 pb-8">
+          <h1 className="text-3xl font-bold text-stone-900">サービス紹介</h1>
+          <p className="mt-3 text-stone-700 max-w-2xl leading-relaxed">
+            {SITE.shortName}では、在宅・入居どちらの形でも住み慣れた環境での生活を続けられるよう、
+            以下の3つのサービスを組み合わせて提供しています。対象地域は札幌市中央区、定員は{SITE.capacity}床です。
+          </p>
+        </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-6 space-y-8">
+      <section className="max-w-5xl mx-auto px-4 py-10 space-y-6">
         {SITE.services.map((s) => (
           <div
             key={s.slug}
             id={s.slug}
-            className="border border-neutral-200 rounded-lg p-6"
+            className="bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
           >
-            <h2 className="text-xl font-bold text-neutral-900">{s.name}</h2>
-            <p className="mt-2 text-neutral-700 leading-relaxed">{s.summary}</p>
-            <p className="mt-3 text-sm font-medium text-emerald-700">
+            <h2 className="text-xl font-bold text-stone-900">{s.name}</h2>
+            <p className="mt-2 text-stone-700 leading-relaxed">{s.summary}</p>
+            <p className="mt-3 text-sm font-medium text-amber-700">
               {s.priceNote}
             </p>
           </div>
@@ -79,36 +81,36 @@ export default function ServicesPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-xl font-bold text-neutral-900">
+        <h2 className="text-xl font-bold text-stone-900">
           対象地域・定員・料金
         </h2>
-        <div className="mt-5 overflow-x-auto">
-          <table className="w-full text-sm border border-neutral-200">
+        <div className="mt-6 overflow-x-auto rounded-2xl border border-amber-100">
+          <table className="w-full text-sm">
             <thead>
-              <tr className="bg-neutral-50">
-                <th className="text-left px-4 py-3 font-medium text-neutral-700 border-b border-neutral-200">
+              <tr className="bg-amber-50">
+                <th className="text-left px-4 py-3 font-medium text-stone-700 border-b border-amber-100">
                   項目
                 </th>
-                <th className="text-left px-4 py-3 font-medium text-neutral-700 border-b border-neutral-200">
+                <th className="text-left px-4 py-3 font-medium text-stone-700 border-b border-amber-100">
                   内容
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-neutral-200">
-                <th className="text-left px-4 py-3 font-medium text-neutral-700 bg-neutral-50">
+              <tr className="border-b border-amber-100">
+                <th className="text-left px-4 py-3 font-medium text-stone-700 bg-amber-50">
                   対象地域
                 </th>
                 <td className="px-4 py-3">札幌市中央区（近隣区は要相談）</td>
               </tr>
-              <tr className="border-b border-neutral-200">
-                <th className="text-left px-4 py-3 font-medium text-neutral-700 bg-neutral-50">
+              <tr className="border-b border-amber-100">
+                <th className="text-left px-4 py-3 font-medium text-stone-700 bg-amber-50">
                   定員
                 </th>
                 <td className="px-4 py-3">{SITE.capacity}床（{SITE.roomType}）</td>
               </tr>
-              <tr className="border-b border-neutral-200">
-                <th className="text-left px-4 py-3 font-medium text-neutral-700 bg-neutral-50">
+              <tr className="border-b border-amber-100">
+                <th className="text-left px-4 py-3 font-medium text-stone-700 bg-amber-50">
                   居室料
                 </th>
                 <td className="px-4 py-3">
@@ -116,8 +118,8 @@ export default function ServicesPage() {
                 </td>
               </tr>
               {SITE.services.map((s) => (
-                <tr key={s.slug} className="border-b border-neutral-200 last:border-b-0">
-                  <th className="text-left px-4 py-3 font-medium text-neutral-700 bg-neutral-50">
+                <tr key={s.slug} className="border-b border-amber-100 last:border-b-0">
+                  <th className="text-left px-4 py-3 font-medium text-stone-700 bg-amber-50">
                     {s.name}
                   </th>
                   <td className="px-4 py-3">{s.priceNote}</td>
@@ -129,12 +131,15 @@ export default function ServicesPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-xl font-bold text-neutral-900">よくある質問</h2>
-        <div className="mt-5 space-y-4">
+        <h2 className="text-xl font-bold text-stone-900">よくある質問</h2>
+        <div className="mt-6 space-y-4">
           {FAQS.map((f) => (
-            <div key={f.question} className="border border-neutral-200 rounded-lg p-5">
-              <h3 className="font-semibold text-neutral-900">Q. {f.question}</h3>
-              <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+            <div
+              key={f.question}
+              className="bg-white border border-amber-100 rounded-2xl p-5 shadow-sm"
+            >
+              <h3 className="font-semibold text-stone-900">Q. {f.question}</h3>
+              <p className="mt-2 text-sm text-stone-600 leading-relaxed">
                 A. {f.answer}
               </p>
             </div>
