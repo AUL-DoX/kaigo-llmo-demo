@@ -84,12 +84,12 @@ export default function Home() {
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-amber-50 to-[#fffaf2]">
-        <div className="max-w-5xl mx-auto px-4 pt-14 pb-12 grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-18 grid gap-12 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
           <div>
-            <p className="text-amber-700 text-sm font-semibold tracking-wide">
+            <p className="inline-flex rounded-full bg-white/80 border border-amber-200 px-4 py-1.5 text-amber-800 text-sm font-semibold tracking-wide shadow-sm">
               札幌市中央区の高齢者介護施設
             </p>
-            <h1 className="mt-3 text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+            <h1 className="mt-5 text-4xl sm:text-5xl font-bold text-stone-900 leading-[1.35]">
               その人らしい毎日を、
               <br />
               ひまわりのように明るく。
@@ -100,21 +100,23 @@ export default function Home() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/services"
-                className="inline-block rounded-full bg-amber-600 px-6 py-3 text-white text-sm font-semibold shadow-sm hover:bg-amber-700 transition-colors"
+                className="sun-button"
               >
                 サービス内容を見る
               </Link>
               <Link
                 href="/contact"
-                className="inline-block rounded-full border border-amber-300 bg-white px-6 py-3 text-stone-800 text-sm font-semibold hover:bg-amber-50 transition-colors"
+                className="inline-flex min-h-13 items-center rounded-full border border-[#2f684f] bg-white px-6 py-3 text-[#214d3b] text-sm font-semibold hover:bg-emerald-50 transition-colors"
               >
                 お問い合わせ
               </Link>
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-amber-100 flex items-center justify-center shadow-inner">
-              <SunflowerMark className="w-32 h-32 sm:w-40 sm:h-40" />
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[44%_56%_60%_40%/48%_42%_58%_52%] bg-gradient-to-br from-amber-100 to-amber-50 flex items-center justify-center shadow-[0_25px_70px_rgba(112,80,31,0.14)] ring-1 ring-white">
+              <div className="absolute -left-5 bottom-7 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-[#2f684f] shadow-lg">24時間の安心を</div>
+              <div className="absolute -right-3 top-8 rounded-2xl bg-[#2f684f] px-4 py-3 text-sm font-semibold text-white shadow-lg">地域とともに</div>
+              <SunflowerMark className="w-36 h-36 sm:w-44 sm:h-44 drop-shadow-lg" />
             </div>
           </div>
         </div>
@@ -139,7 +141,7 @@ export default function Home() {
           {FEATURES.map((f) => (
             <div
               key={f.title}
-              className="bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
+              className="warm-card bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
             >
               <h3 className="font-semibold text-stone-900">{f.title}</h3>
               <p className="mt-2 text-sm text-stone-600 leading-relaxed">
@@ -183,7 +185,7 @@ export default function Home() {
           {VOICES.map((v) => (
             <blockquote
               key={v.name}
-              className="bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
+              className="warm-card bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
             >
               <p className="text-stone-700 leading-relaxed">“{v.text}”</p>
               <footer className="mt-4 text-sm text-amber-700 font-medium">

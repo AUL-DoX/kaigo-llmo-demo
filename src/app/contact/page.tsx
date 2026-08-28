@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 import SunflowerMark from "@/components/SunflowerMark";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -54,6 +55,14 @@ export default function ContactPage() {
         </p>
       </section>
 
+      <section id="contact-form" className="max-w-3xl mx-auto px-4 py-12 scroll-mt-28">
+        <div className="rounded-[2rem] border border-amber-100 bg-white p-6 sm:p-10 shadow-[0_20px_60px_rgba(73,55,24,0.09)]">
+          <h2 className="text-2xl font-bold">お問い合わせフォーム</h2>
+          <p className="mt-4 text-sm text-stone-600">すべての項目をご入力ください。</p>
+          <div className="mt-8"><ContactForm /></div>
+        </div>
+      </section>
+
       <section className="max-w-3xl mx-auto px-4 py-14 border-t border-amber-100 mt-6">
         <div className="flex items-center gap-3">
           <SunflowerMark className="w-8 h-8 shrink-0" />
@@ -67,6 +76,7 @@ export default function ContactPage() {
           FAQ形式やJSON-LDなどの構造化データを適切に組み込むことを意識して制作しています。
           同じような考え方でホームページを作りたい、見直したいという方は、お気軽にご相談ください。
         </p>
+        <a href="#contact-form" className="sun-button mt-7">お問い合わせ</a>
       </section>
     </>
   );
