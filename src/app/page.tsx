@@ -125,7 +125,6 @@ export default function Home() {
               />
               <figcaption className="absolute bottom-3 right-4 rounded-full bg-black/45 px-3 py-1 text-[11px] text-white backdrop-blur-sm">※画像はイメージです</figcaption>
               <div className="absolute left-4 bottom-7 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-[#2f684f] shadow-lg">24時間の安心を</div>
-              <div className="absolute right-4 top-8 rounded-2xl bg-[#2f684f] px-4 py-3 text-sm font-semibold text-white shadow-lg">地域とともに</div>
             </figure>
           </div>
         </div>
