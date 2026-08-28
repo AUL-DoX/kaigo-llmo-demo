@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
-import SunflowerMark from "@/components/SunflowerMark";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -89,7 +89,7 @@ export default function Home() {
             <p className="inline-flex rounded-full bg-white/80 border border-amber-200 px-4 py-1.5 text-amber-800 text-sm font-semibold tracking-wide shadow-sm">
               札幌市中央区の高齢者介護施設
             </p>
-            <h1 className="mt-5 text-4xl sm:text-5xl font-bold text-stone-900 leading-[1.35]">
+            <h1 className="mt-5 text-4xl sm:text-[2.65rem] xl:text-5xl font-bold text-stone-900 leading-[1.35]">
               その人らしい毎日を、
               <br />
               ひまわりのように明るく。
@@ -113,24 +113,39 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[44%_56%_60%_40%/48%_42%_58%_52%] bg-gradient-to-br from-amber-100 to-amber-50 flex items-center justify-center shadow-[0_25px_70px_rgba(112,80,31,0.14)] ring-1 ring-white">
-              <div className="absolute -left-5 bottom-7 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-[#2f684f] shadow-lg">24時間の安心を</div>
+            <figure className="relative w-full max-w-xl overflow-hidden rounded-[2.5rem_2.5rem_2.5rem_.75rem] bg-amber-50 shadow-[0_25px_70px_rgba(112,80,31,0.18)] ring-1 ring-white">
+              <Image
+                src="/images/care-home-hero.webp"
+                alt="明るい共有スペースで会話する入居者と介護職員のイメージ"
+                width={1536}
+                height={864}
+                priority
+                sizes="(min-width: 1024px) 46vw, 100vw"
+                className="aspect-[4/3] w-full object-cover object-[64%_center]"
+              />
+              <figcaption className="absolute bottom-3 right-4 rounded-full bg-black/45 px-3 py-1 text-[11px] text-white backdrop-blur-sm">※画像はイメージです</figcaption>
+              <div className="absolute left-4 bottom-7 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-[#2f684f] shadow-lg">24時間の安心を</div>
               <div className="absolute -right-3 top-8 rounded-2xl bg-[#2f684f] px-4 py-3 text-sm font-semibold text-white shadow-lg">地域とともに</div>
-              <SunflowerMark className="w-36 h-36 sm:w-44 sm:h-44 drop-shadow-lg" />
-            </div>
+            </figure>
           </div>
         </div>
       </section>
 
       {/* 理念 */}
       <section className="bg-white border-y border-amber-100">
-        <div className="max-w-5xl mx-auto px-4 py-12">
-          <h2 className="text-xl font-bold text-stone-900">施設の理念</h2>
-          <p className="mt-3 text-stone-700 leading-relaxed max-w-2xl">
-            「住み慣れた地域で、その人らしく暮らし続ける」ことを支えるため、
-            介護・看護・生活支援を一体的に提供します。医療的ケアが必要になっても、
-            重度化しても、できる限り住み慣れた環境での生活を継続できるよう支援することを理念としています。
-          </p>
+        <div className="max-w-5xl mx-auto px-4 py-14 grid gap-8 md:grid-cols-[1fr_.9fr] md:items-center">
+          <div>
+            <h2 className="text-xl font-bold text-stone-900">施設の理念</h2>
+            <p className="mt-3 text-stone-700 leading-relaxed max-w-2xl">
+              「住み慣れた地域で、その人らしく暮らし続ける」ことを支えるため、
+              介護・看護・生活支援を一体的に提供します。医療的ケアが必要になっても、
+              重度化しても、できる限り住み慣れた環境での生活を継続できるよう支援することを理念としています。
+            </p>
+          </div>
+          <figure className="overflow-hidden rounded-[2rem_.75rem_2rem_2rem] shadow-lg">
+            <Image src="/images/care-home-room.webp" alt="木の温もりを感じる個室と共有スペースのイメージ" width={1536} height={864} sizes="(min-width: 768px) 42vw, 100vw" className="aspect-[16/10] w-full object-cover" />
+            <figcaption className="bg-white px-4 py-2 text-right text-xs text-stone-500">※画像はイメージです</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -155,10 +170,18 @@ export default function Home() {
       {/* 一日の流れ */}
       <section className="bg-amber-50/60 border-y border-amber-100">
         <div className="max-w-5xl mx-auto px-4 py-12">
-          <h2 className="text-xl font-bold text-stone-900">ご入居者の一日（例）</h2>
-          <p className="mt-2 text-sm text-stone-500">
-            ※体調やご希望に応じて個別に調整します。あくまで標準的な一日の流れです。
-          </p>
+          <div className="grid gap-7 md:grid-cols-[.9fr_1.1fr] md:items-center">
+            <div>
+              <h2 className="text-xl font-bold text-stone-900">ご入居者の一日（例）</h2>
+              <p className="mt-2 text-sm text-stone-500">
+                ※体調やご希望に応じて個別に調整します。あくまで標準的な一日の流れです。
+              </p>
+            </div>
+            <figure className="overflow-hidden rounded-2xl shadow-md">
+              <Image src="/images/resident-activity.webp" alt="入居者と介護職員が花を生けるレクリエーションのイメージ" width={1536} height={864} sizes="(min-width: 768px) 52vw, 100vw" className="aspect-[16/7] w-full object-cover object-center" />
+              <figcaption className="bg-white px-4 py-1.5 text-right text-xs text-stone-500">※画像はイメージです</figcaption>
+            </figure>
+          </div>
           <ol className="mt-6 grid gap-3 sm:grid-cols-2">
             {DAILY_SCHEDULE.map((s) => (
               <li

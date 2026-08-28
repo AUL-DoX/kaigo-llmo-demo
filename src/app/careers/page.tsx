@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 
@@ -72,12 +73,18 @@ export default function CareersPage() {
       ))}
 
       <section className="bg-gradient-to-b from-amber-50 to-[#fffaf2]">
-        <div className="max-w-5xl mx-auto px-4 pt-14 pb-8">
-          <h1 className="text-3xl font-bold text-stone-900">採用情報</h1>
-          <p className="mt-3 text-stone-700 max-w-2xl leading-relaxed">
-            {SITE.shortName}（運営：{SITE.operatorName}）では、
-            一緒に地域の介護・看護を支えるスタッフを募集しています。職種・給与・勤務条件は以下の通りです。
-          </p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-12 grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-stone-900">採用情報</h1>
+            <p className="mt-3 text-stone-700 max-w-2xl leading-relaxed">
+              {SITE.shortName}（運営：{SITE.operatorName}）では、
+              一緒に地域の介護・看護を支えるスタッフを募集しています。職種・給与・勤務条件は以下の通りです。
+            </p>
+          </div>
+          <figure className="overflow-hidden rounded-[2rem_2rem_.75rem_2rem] shadow-xl">
+            <Image src="/images/care-team.webp" alt="介護・看護について話し合う職員チームのイメージ" width={1536} height={864} priority sizes="(min-width: 1024px) 54vw, 100vw" className="aspect-[16/8] w-full object-cover object-center" />
+            <figcaption className="bg-white px-4 py-1.5 text-right text-xs text-stone-500">※画像はイメージです</figcaption>
+          </figure>
         </div>
       </section>
 

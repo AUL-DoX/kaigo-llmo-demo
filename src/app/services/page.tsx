@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 
@@ -55,12 +56,18 @@ export default function ServicesPage() {
       <JsonLd data={faqJsonLd} />
 
       <section className="bg-gradient-to-b from-amber-50 to-[#fffaf2]">
-        <div className="max-w-5xl mx-auto px-4 pt-14 pb-8">
-          <h1 className="text-3xl font-bold text-stone-900">サービス紹介</h1>
-          <p className="mt-3 text-stone-700 max-w-2xl leading-relaxed">
-            {SITE.shortName}では、在宅・入居どちらの形でも住み慣れた環境での生活を続けられるよう、
-            以下の3つのサービスを組み合わせて提供しています。対象地域は札幌市中央区、定員は{SITE.capacity}床です。
-          </p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-12 grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-stone-900">サービス紹介</h1>
+            <p className="mt-3 text-stone-700 max-w-2xl leading-relaxed">
+              {SITE.shortName}では、在宅・入居どちらの形でも住み慣れた環境での生活を続けられるよう、
+              以下の3つのサービスを組み合わせて提供しています。対象地域は札幌市中央区、定員は{SITE.capacity}床です。
+            </p>
+          </div>
+          <figure className="overflow-hidden rounded-[2rem_.75rem_2rem_2rem] shadow-xl">
+            <Image src="/images/care-home-room.webp" alt="明るく落ち着いた居室と共有スペースのイメージ" width={1536} height={864} priority sizes="(min-width: 1024px) 52vw, 100vw" className="aspect-[16/8] w-full object-cover object-center" />
+            <figcaption className="bg-white px-4 py-1.5 text-right text-xs text-stone-500">※画像はイメージです</figcaption>
+          </figure>
         </div>
       </section>
 
