@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import JsonLd from "@/components/JsonLd";
+import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,52 +9,9 @@ export const metadata: Metadata = {
     "ひまわり高齢者介護施設が提供するサービス一覧。定期巡回・随時対応型訪問介護看護、訪問看護、施設内デイサービスの内容・対象地域・定員・料金を掲載。",
 };
 
-const FAQS = [
-  {
-    question: "対象となる地域はどこですか？",
-    answer:
-      "札幌市中央区全域を対象としています。中央区以外の方はご相談ください。近隣区への対応可否は個別にご案内します。",
-  },
-  {
-    question: "要介護度はどのくらいから利用できますか？",
-    answer:
-      "要支援1〜2、要介護1〜5まで幅広く対応しています。要介護度によってご利用いただけるサービスや料金が異なりますので、詳細はお問い合わせください。",
-  },
-  {
-    question: "医療的ケアが必要でも入居できますか？",
-    answer:
-      "看護師による訪問看護と連携しているため、たんの吸引や経管栄養などの医療的ケアが必要な方も入居いただけます。主治医・訪問診療との連携体制も整えています。",
-  },
-  {
-    question: "料金には何が含まれますか？",
-    answer:
-      "居室料（1K個室、月額100,000円〜）に加え、ご利用になるサービス（定期巡回・訪問看護・デイサービス）は介護保険適用のもと別途費用がかかります。食費・水道光熱費も別途となります。",
-  },
-  {
-    question: "夜間の緊急時にも対応してもらえますか？",
-    answer:
-      "定期巡回・随時対応型訪問介護看護では、24時間対応のコールセンターを設置しており、夜間・緊急時の通報にも随時対応します。",
-  },
-];
-
 export default function ServicesPage() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQS.map((f) => ({
-      "@type": "Question",
-      name: f.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: f.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <JsonLd data={faqJsonLd} />
-
       <section className="bg-gradient-to-b from-amber-50 to-[#fffaf2]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-12 grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div>
@@ -138,19 +95,10 @@ export default function ServicesPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-xl font-bold text-stone-900">よくある質問</h2>
-        <div className="mt-6 space-y-4">
-          {FAQS.map((f) => (
-            <div
-              key={f.question}
-              className="bg-white border border-amber-100 rounded-2xl p-5 shadow-sm"
-            >
-              <h3 className="font-semibold text-stone-900">Q. {f.question}</h3>
-              <p className="mt-2 text-sm text-stone-600 leading-relaxed">
-                A. {f.answer}
-              </p>
-            </div>
-          ))}
+        <div className="rounded-[2rem] border border-amber-100 bg-white p-7 shadow-sm sm:p-10">
+          <h2 className="text-xl font-bold text-stone-900">ご利用までの流れ・よくある質問</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-600">介護認定を受けていない方、担当ケアマネジャーがいない方もご相談いただけます。見学から利用開始までの手順、費用、医療的ケアなどを詳しくご案内しています。</p>
+          <Link href="/faq" className="sun-button mt-6">ご利用案内・FAQを見る</Link>
         </div>
       </section>
     </>

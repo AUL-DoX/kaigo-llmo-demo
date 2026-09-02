@@ -5,6 +5,7 @@ import SunflowerMark from "@/components/SunflowerMark";
 const NAV = [
   { href: "/", label: "トップ" },
   { href: "/services", label: "サービス紹介" },
+  { href: "/faq", label: "FAQ" },
   { href: "/careers", label: "採用情報" },
   { href: "/access", label: "アクセス" },
   { href: "/contact", label: "お問い合わせ" },

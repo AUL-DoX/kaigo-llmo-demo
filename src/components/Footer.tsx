@@ -30,6 +30,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/faq" className="hover:text-amber-700">
+                  ご利用案内・FAQ
+                </Link>
+              </li>
+              <li>
                 <Link href="/access" className="hover:text-amber-700">
                   アクセス
                 </Link>
