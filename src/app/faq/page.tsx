@@ -41,7 +41,7 @@ export default function FaqPage() {
         </p>
         <ol className="mt-8 grid gap-5 md:grid-cols-2">
           {USAGE_STEPS.map((step, index) => (
-            <li key={step.title} className="warm-card relative rounded-2xl border border-amber-100 bg-white p-6 pl-20 shadow-sm">
+            <li key={step.title} className="relative rounded-2xl border border-amber-100 bg-white p-6 pl-20 shadow-sm">
               <span className="absolute left-5 top-6 grid h-10 w-10 place-items-center rounded-full bg-[#2f684f] font-bold text-white">{index + 1}</span>
               <h3 className="font-bold text-stone-900">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-stone-600">{step.body}</p>
