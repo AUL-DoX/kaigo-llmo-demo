@@ -70,6 +70,20 @@ export default function ContactPage() {
             こういうサイトを作りたい方へ
           </h2>
         </div>
+        <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50/70 px-5 py-4 text-sm leading-relaxed text-stone-700">
+          <p>
+            ※このサイトは、高齢者介護・障がい福祉の現場で働く
+            <a
+              href="https://aul-dox.jp"
+              target="_blank"
+              rel="noreferrer"
+              className="mx-1 font-semibold text-[#2f684f] underline decoration-emerald-300 underline-offset-4 hover:text-[#214d3b]"
+            >
+              AUL-DoX
+            </a>
+            が制作した、LLMO対策のデモサイトです。
+          </p>
+        </div>
         <p className="mt-4 text-stone-700 leading-relaxed">
           このサイトは、LLM（AI）に正しく理解・引用されることを意識して設計した
           「LLMO（LLM最適化）」のデモサイトです。数値や条件を曖昧にせず明記すること、

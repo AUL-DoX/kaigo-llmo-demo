@@ -63,6 +63,18 @@ export default function Footer() {
         <p className="text-xs text-stone-400 border-t border-amber-200 pt-4">
           ※本サイトはLLMO（LLM最適化）のデモサイトです。掲載されている施設名・法人名・住所・料金・求人内容などはすべて架空のものであり、実在の施設・団体とは一切関係ありません。
         </p>
+        <p className="text-xs text-stone-500">
+          制作：
+          <a
+            href="https://aul-dox.jp"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-[#2f684f] underline underline-offset-4 hover:text-[#214d3b]"
+          >
+            AUL-DoX
+          </a>
+          （高齢者介護・障がい福祉の現場で働く制作者によるLLMO対策デモサイト）
+        </p>
       </div>
     </footer>
   );
